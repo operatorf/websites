@@ -23,5 +23,3 @@ export default function TOS() {
     </>
   );
 }
-
-export const dynamic = "force-dynamic";
