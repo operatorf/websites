@@ -1,5 +1,6 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
+// Main Terms Component
 const Terms = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 pb-24 relative overflow-hidden">
@@ -30,7 +31,7 @@ const Terms = () => {
       </div>
 
       <div className="space-y-16 relative">
-        {/* Introduction */}
+        {/* Sections */}
         <Section>
           <p className="text-lg text-muted-foreground/90 leading-relaxed">
             By utilizing our services or products, you agree to comply with these Terms of Service. 
@@ -38,7 +39,6 @@ const Terms = () => {
           </p>
         </Section>
 
-        {/* Commitments */}
         <Section>
           <SectionTitle>Our Commitments</SectionTitle>
           <List>
@@ -54,7 +54,6 @@ const Terms = () => {
           </List>
         </Section>
 
-        {/* Server Boosting */}
         <Section>
           <SectionTitle>Server Boosting</SectionTitle>
           <List>
@@ -77,7 +76,6 @@ const Terms = () => {
           </List>
         </Section>
 
-        {/* Nitro Tokens */}
         <Section>
           <SectionTitle>Nitro Tokens</SectionTitle>
           <List>
@@ -99,7 +97,6 @@ const Terms = () => {
           </List>
         </Section>
 
-        {/* Tools & Bots */}
         <Section>
           <SectionTitle>Tools & Bots</SectionTitle>
           <List>
@@ -118,7 +115,6 @@ const Terms = () => {
           </List>
         </Section>
 
-        {/* Privacy */}
         <Section>
           <SectionTitle>Privacy Policy</SectionTitle>
           <List>
@@ -128,7 +124,6 @@ const Terms = () => {
           </List>
         </Section>
 
-        {/* Refunds */}
         <Section>
           <SectionTitle>Refund & Replacement Policy</SectionTitle>
           <List>
@@ -144,7 +139,6 @@ const Terms = () => {
           </List>
         </Section>
 
-        {/* Disclaimer */}
         <Section>
           <p className="text-sm text-muted-foreground/60 italic">
             Disclaimer: This website is not affiliated with, authorized, maintained, sponsored or endorsed by Discord Inc. (discord.com) or any of its affiliates or subsidiaries.
@@ -155,21 +149,41 @@ const Terms = () => {
   );
 };
 
-const Section = ({ children }) => (
+// Section Component with Explicit Type for Children
+type SectionProps = {
+  children: ReactNode;
+};
+
+const Section = ({ children }: SectionProps) => (
   <div className="space-y-6">{children}</div>
 );
 
-const SectionTitle = ({ children }) => (
+// SectionTitle Component with Explicit Type for Children
+type SectionTitleProps = {
+  children: ReactNode;
+};
+
+const SectionTitle = ({ children }: SectionTitleProps) => (
   <h2 className="text-2xl font-semibold tracking-tight mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">
     {children}
   </h2>
 );
 
-const List = ({ children }) => (
+// List Component with Explicit Type for Children
+type ListProps = {
+  children: ReactNode;
+};
+
+const List = ({ children }: ListProps) => (
   <div className="space-y-4">{children}</div>
 );
 
-const ListItem = ({ children }) => (
+// ListItem Component with Explicit Type for Children
+type ListItemProps = {
+  children: ReactNode;
+};
+
+const ListItem = ({ children }: ListItemProps) => (
   <div className="flex gap-4 items-start">
     <div className="mt-2">
       <div className="h-2 w-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500" />
